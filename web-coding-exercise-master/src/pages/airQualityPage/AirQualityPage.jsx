@@ -3,9 +3,8 @@ import * as R from 'ramda';
 import 'tachyons';
 import withState from '../../utils/withState';
 import { fetchAirQuality } from '../../api/airQualityAPI';
-import CitySearchSideBar from '../../common/citySearchSideBar/CitySearchSideBar'
-import AirQualityDashboard from '../airQualityPage/airQualityDashboard/AirQualityDashboard'
-
+import CitySearchSideBar from '../../common/citySearchSideBar/CitySearchSideBar';
+import AirQualityDashboard from '../airQualityPage/airQualityDashboard/AirQualityDashboard';
 
 const AirQualityPage = ({
     feeds, setFeeds,
@@ -28,6 +27,8 @@ const AirQualityPage = ({
         }
     }
 
+    const onNewSearch = () => setFeeds([]);
+
     return (
         // eslint-disable-next-line react/jsx-filename-extension
         <div className="flex flex-column">
@@ -36,7 +37,7 @@ const AirQualityPage = ({
             </header>
             <div className="cf pa5 flex-grow-1 flex-shrink-0 flex items-start">
                 <div class="fl w-28 tc">
-                    <CitySearchSideBar onLocationSelected={onLocationSelected} />
+                    <CitySearchSideBar onLocationSelected={onLocationSelected} onRefreshData={onNewSearch} />
                 </div>
                 <div class="fl w-72 tc">
                     <AirQualityDashboard feeds={feeds} />

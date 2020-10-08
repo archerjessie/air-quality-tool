@@ -2,7 +2,7 @@ import React from 'react'
 import './locationPanel.css'
 
 const LocationPanel = ({ feed }) => (
-    <div className="location-panel ba b--gray br1 ml5 mb5 w-25">
+    <div className="location-panel ba b--gray br1 ml5 mb5 w-30">
         <div className="pv2 ph3 flex justify-between">
             {feed.city.name}
             <div>
@@ -21,7 +21,7 @@ const LocationPanel = ({ feed }) => (
             {feed.attributions.map(({ url, name }) => (
                 <div key={url} className="flex justify-between pv1 ph3">
                     <div>{name}</div>
-                    <div className="blue pl3">{url}</div>
+                    <a className="blue pl3" href={url}>{url}</a>
                 </div>
             ))}
         </div>

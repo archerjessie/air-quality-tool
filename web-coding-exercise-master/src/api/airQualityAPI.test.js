@@ -1,9 +1,4 @@
 import { getFromUrl } from './airQualityAPI'
-import fetchMock from 'jest-fetch-mock';
-
-beforeAll(() => {
-    fetchMock.enableMocks();
-})
 
 beforeEach(() => {
     fetch.resetMocks();

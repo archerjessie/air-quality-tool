@@ -1,7 +1,7 @@
-import React from 'react'
-import LocationPanel from './locationPanel/LocationPanel'
+import React from 'react';
+import LocationPanel from './locationPanel/LocationPanel';
 
-import './airQualityDashboard.css'
+import './airQualityDashboard.css';
 
 const AirQualityDashboard = ({ feeds }) => (
     <div className="air-quality-dashboard flex flex-wrap justify-around">

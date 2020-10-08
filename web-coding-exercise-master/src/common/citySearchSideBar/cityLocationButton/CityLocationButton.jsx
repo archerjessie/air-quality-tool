@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import * as R from 'ramda';
 import withState from '../../../utils/withState';

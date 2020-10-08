@@ -7,13 +7,14 @@ import CityLocationButton from './cityLocationButton/CityLocationButton';
 
 import './citySearchSideBar.css';
 
-
 const CitySearchSideBar = ({
     onLocationSelected,
+    onRefreshData,
     searchData,
     setSearchData }) => {
     const onSearchCity = (search) => {
-        fetchCity(search, setSearchData)
+        onRefreshData();
+        fetchCity(search, setSearchData);
     }
 
     return (
