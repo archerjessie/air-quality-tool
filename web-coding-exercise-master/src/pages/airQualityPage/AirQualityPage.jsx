@@ -5,6 +5,8 @@ import withState from '../../utils/withState';
 import { fetchAirQuality } from '../../api/airQualityAPI';
 import CitySearchSideBar from '../../common/citySearchSideBar/CitySearchSideBar';
 import AirQualityDashboard from '../airQualityPage/airQualityDashboard/AirQualityDashboard';
+import PropTypes from 'prop-types';
+
 
 const AirQualityPage = ({
     feeds, setFeeds,
@@ -18,7 +20,6 @@ const AirQualityPage = ({
     }
 
     const onLocationSelected = (uid, selected) => {
-        console.log(uid)
         if (selected) {
             fetchAirQuality(uid, addFeed)
         }
@@ -36,14 +37,19 @@ const AirQualityPage = ({
                 Air Quality Index
             </header>
             <div className="cf pa5 flex-grow-1 flex-shrink-0 flex items-start">
-                <div class="fl w-28 tc">
+                <div className="fl w-28 tc">
                     <CitySearchSideBar onLocationSelected={onLocationSelected} onRefreshData={onNewSearch} />
                 </div>
-                <div class="fl w-72 tc">
+                <div className="fl w-72 tc">
                     <AirQualityDashboard feeds={feeds} />
                 </div>
             </div>
         </div>)
+}
+
+AirQualityPage.propTypes = {
+    feeds: PropTypes.array.isRequired,
+    setFeeds: PropTypes.func.isRequired
 }
 
 export default R.compose(

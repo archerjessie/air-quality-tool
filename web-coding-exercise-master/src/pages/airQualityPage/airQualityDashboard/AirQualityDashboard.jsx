@@ -1,5 +1,6 @@
 import React from 'react';
 import LocationPanel from './locationPanel/LocationPanel';
+import PropTypes from 'prop-types';
 
 import './airQualityDashboard.css';
 
@@ -10,4 +11,9 @@ const AirQualityDashboard = ({ feeds }) => (
         ))}
     </div>
 )
+
+AirQualityDashboard.propTypes = {
+    feeds: PropTypes.array.isRequired
+}
+
 export default AirQualityDashboard;

@@ -1,6 +1,7 @@
 import React from 'react'
 import * as R from 'ramda';
 import withState from '../../utils/withState';
+import PropTypes from 'prop-types';
 
 const SimpleForm = ({ search, setSearch, onSubmit }) => (
     <form
@@ -28,6 +29,12 @@ const SimpleForm = ({ search, setSearch, onSubmit }) => (
         </div>
     </form>
 )
+
+SimpleForm.propTypes = {
+    search: PropTypes.string.isRequired,
+    setSearch: PropTypes.func.isRequired
+}
+
 export default R.compose(
     withState('search', 'setSearch', ''),
 )(SimpleForm);

@@ -4,6 +4,7 @@ import { fetchCity } from '../../api/airQualityAPI';
 import * as R from 'ramda';
 import withState from '../../utils/withState';
 import CityLocationButton from './cityLocationButton/CityLocationButton';
+import PropTypes from 'prop-types';
 
 import './citySearchSideBar.css';
 
@@ -36,6 +37,14 @@ const CitySearchSideBar = ({
         </div>
     )
 }
+
+CitySearchSideBar.propTypes = {
+    onLocationSelected: PropTypes.func.isRequired,
+    onRefreshData: PropTypes.func,
+    searchData: PropTypes.array,
+    setSearchData: PropTypes.func.isRequired
+}
+
 export default R.compose(
     withState('searchData', 'setSearchData', null),
 )(CitySearchSideBar);

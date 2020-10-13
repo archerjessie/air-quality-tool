@@ -1,5 +1,6 @@
-import React from 'react'
-import './locationPanel.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './locationPanel.css';
 
 const LocationPanel = ({ feed }) => (
     <div className="location-panel ba b--gray br1 ml5 mb5 w-30">
@@ -27,4 +28,9 @@ const LocationPanel = ({ feed }) => (
         </div>
     </div>
 )
+
+LocationPanel.propTypes = {
+    feed: PropTypes.object.isRequired
+}
+
 export default LocationPanel;
